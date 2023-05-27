@@ -1,8 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
+// const User = require('./User');
 
-class Post extends Model {}
+class Post extends Model { }
 
 Post.init(
   {
@@ -12,33 +13,25 @@ Post.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    username: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        references: {
-            model: 'user',
-            key:'username'
-        }
-      },
-      user_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: 'user',
-            key:'id'
-        }
-      },
+    user_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'user',
+        key: 'id'
+      }
+    },
     title: {
-        type: DataTypes.STRING,
-        allowNull: false,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     post_text: {
-        type: DataTypes.STRING,
-        allowNull: false,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     date_created: {
-        type: DataTypes.DATE,
-        allowNull: false,
+      type: DataTypes.DATE,
+      allowNull: false,
     },
   },
   {
@@ -48,5 +41,9 @@ Post.init(
     modelName: 'post',
   }
 );
+
+// Post.belongsTo(User, {
+//   foreignKey: 'user_id',
+// });
 
 module.exports = Post;

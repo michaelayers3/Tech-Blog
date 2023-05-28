@@ -15,7 +15,10 @@
 // seedAll();
 
 const sequelize = require('../config/connection');
+const { post } = require('../controllers');
 const { User, Post, Comment } = require('../models');
+const postData = require('./postData.json');
+const userData = require('./userData.json');
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
@@ -28,19 +31,21 @@ const seedAll = async () => {
 
   // Create a post
   await Post.create({
+    post_id:2,
     title: 'Example Post',
-    post_text: 'This is an example post',
-    date_created: '2021-08-18 06:00:00',
-    user_id: 1 // Use the correct user_id that exists in the `users` table
+    username: 'example-user', 
+    post_text: 'This is from the index',
+    date_created: '05/27/2023 12:00:00',
+    user_id: 1 
   });
 
   // Create a comment
   await Comment.create({
-    comment_text: 'This is a stupid comment',
+    comment_text: 'This is from the index',
     user_id: 1,
-    user_name: 'example-user', // Use the correct user_id that exists in the `users` table
-    post_id: 1,
-    date_created: '2021-08-18 06:00:00'
+    username: 'example-user', 
+    date_created: '05/27/2023 12:00:00',
+    post_id: 1
   });
 
   process.exit(0);

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" type="css" href="../../public/css/jass.css">
+  <link rel="stylesheet" type="css" href="../../public/css/style.css">
+</head>
+
+<body>
+
+  <main>
+    <h1>Welcome, {{username}}!</h1>
+
+    <h2>Post Something!</h2>
+    <form class="form new-post-form">
+      <div>
+        <label for="title">Title:</label>
+        <input type="text" name="title" id="title" required>
+      </div>
+      <div>
+        <label for="post_text">Post:</label>
+        <textarea name="post_text" id="post_text" cols="30" rows="10" required></textarea>
+      </div>
+      <button type="submit">Post</button>
+
+    <h2>Your Posts:</h2>
+    {{#each posts}}
+    <div class="post">
+      <h3>{{title}}</h3>
+      <p>{{post_text}}</p>
+      <p>Date: {{format_date date_created}}</p>
+    </div>
+    {{/each}}
+  </main>
+</body>
+<script src="./js/post.js"></script>
+
+</html>

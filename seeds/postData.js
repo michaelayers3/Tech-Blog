@@ -3,10 +3,10 @@ const {Post} = require('../models');
 const postData = [
     {
         title: "This is a post",
-        post_text: "This is a post",
+        post_text: "This is from postData",
         username: "Poster",
         user_id: 1,
-        date_created: "2021-08-18 00:00:00"
+        date_created: "05/27/2023 12:00:00"
     },
 ];
 

@@ -45,10 +45,6 @@ class User extends Model {
     }
   );
   
-  // User.hasMany(() => require('./post'), {
-  //   foreignKey: 'user_id',
-  //   onDelete: 'CASCADE'
-  // });
 
   module.exports = User;
   

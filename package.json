@@ -1,7 +1,6 @@
 {
   "name": "tech-blog",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "dependencies": {
     "abbrev": "^1.1.1",
@@ -180,5 +179,6 @@
   "bugs": {
     "url": "https://github.com/michaelayers3/Tech-Blog/issues"
   },
-  "homepage": "https://github.com/michaelayers3/Tech-Blog#readme"
+  "homepage": "https://github.com/michaelayers3/Tech-Blog#readme",
+  "description": ""
 }

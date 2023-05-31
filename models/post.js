@@ -21,6 +21,14 @@ Post.init(
         key: 'id'
       }
     },
+    // username: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    //   references: {
+    //     model: 'user',
+    //     key: 'username'
+    //   }
+    // },
    
     title: {
       type: DataTypes.STRING,
@@ -32,7 +40,8 @@ Post.init(
     },
     date_created: {
       type: DataTypes.DATE,
-      allowNull: false,
+      // allowNull: false,
+      defaultValue: DataTypes.NOW,
     },
   },
   {

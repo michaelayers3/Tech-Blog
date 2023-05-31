@@ -2,15 +2,19 @@
 <h1>{{post.title}}</h1>
 <div class="post-details">
   <p>{{post.post_text}}</p>
-  <p>By: {{username}}</p>
+  <p>By: {{post.user_id}}</p>
   <p>Date: {{format_date post.date_created}}</p>
 </div>
-<section class="comments">
-</section>
 <h3>Add a comment:</h3>
 <form class="comment-form">
   <textarea name="comment_text" id="comment_text" cols="30" rows="10"></textarea>
   <button type="submit" class="btn btn-primary">Submit</button>
+</section>
+<section class="comments">
+<h3>Comments</h3>
+{{#each comments}}
+  {{> comment-details}}
+{{/each}}
 </section>
 
 <script src="/js/comment.js"></script>

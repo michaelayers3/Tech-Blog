@@ -1,13 +1,13 @@
 <section class="post">
     <a href="/api/post/{{id}}"><h3 class="post-title">{{title}}</h3></a>
     <div class="post-details">
-        <p class="post-author">{{user.id}}</p>
+        <p class="post-author">{{username}}</p>
         <p class="post-text">{{post_text}}</p>
         <p class="post-date">Date:{{format_date date_created}}</p>
     </div>
     <section class="comments">
         <h3>Comments</h3>
-        {{#each comments}}
+        {{#each comments as |comment|}}
         {{> comment-details}}
         {{/each}}
     </section>

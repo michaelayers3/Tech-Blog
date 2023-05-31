@@ -12,7 +12,7 @@
 <body>
 
   <main>
-    <h1>Welcome, {{user.username}}!</h1>
+    <h1>Welcome, {{username}}!</h1>
 
     <h2>Post Something!</h2>
     <form class="form new-post-form">
@@ -27,13 +27,15 @@
       <button type="submit">Post</button>
 
     <h2>Your Posts:</h2>
-    {{#each posts}}
-    <div class="post">
-      <h3>{{title}}</h3>
-      <p>{{post_text}}</p>
-      <p>Date: {{format_date date_created}}</p>
-    </div>
+    {{#each posts as |post|}}
+    {{> post-details}}
     {{/each}}
+    <div class="post">
+      {{!-- <h3>{{title}}</h3>
+      <p>{{post_text}}</p>
+      <p>Date: {{format_date date_created}}</p> --}}
+    </div>
+    {{!-- {{/each}} --}}
   </main>
 </body>
 <script src="./js/post.js"></script>

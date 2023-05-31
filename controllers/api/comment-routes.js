@@ -3,7 +3,7 @@ const { User, Post, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 //GET all comments
-router.get('/comment', async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const commentData = await Comment.findAll({
             include: [
@@ -19,7 +19,7 @@ router.get('/comment', async (req, res) => {
     }
 });
 //GET one comment
-router.get('/comment/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
     try {
         const commentData = await Comment.findByPk(req.params.id, {
             include: [
@@ -35,7 +35,7 @@ router.get('/comment/:id', async (req, res) => {
     }
 });
 //POST new comment
-router.post('/comment', withAuth, async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     try {
         const commentData = await Comment.create({
             comment_text: req.body.comment_text,
@@ -49,21 +49,21 @@ router.post('/comment', withAuth, async (req, res) => {
 }
 );
 //PUT update comment
-router.put('/comment/:id', withAuth, async (req, res) => {
-    try {
-        const commentData = await Comment.update({
-            where: {
-                id: req.params.id,
-                comment_text: req.body.comment_text,
-                post_id: req.body.post_id,
-                user_id: req.session.user_id,
-            },
-        });
-        res.status(200).json(commentData);
-    } catch (err) {
-        res.status(400).json(err);
-    }
-}
-);
+// router.put('/:id', withAuth, async (req, res) => {
+//     try {
+//         const commentData = await Comment.update({
+//             where: {
+//                 id: req.params.id,
+//                 comment_text: req.body.comment_text,
+//                 post_id: req.body.post_id,
+//                 user_id: req.session.user_id,
+//             },
+//         });
+//         res.status(200).json(commentData);
+//     } catch (err) {
+//         res.status(400).json(err);
+//     }
+// }
+// );
 
 module.exports = router;

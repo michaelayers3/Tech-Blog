@@ -1,0 +1,25 @@
+[
+    {
+        "id": 1,
+        "title": "Post 1 from postData.json",
+        "post_text": "This is from postData.json",
+        "user_id": 1,
+        "date_created": "05/27/2023 12:00:00"
+    },
+
+    {
+        "id": 2,
+        "title": "Post 2 from postData.json",
+        "post_text": "This is from postData.json",
+        "user_id": 2,
+        "date_created": "05/27/2023 12:00:00"
+    },
+
+    {
+        "id": 3,
+        "title": "Post 3 from postData.json",
+        "post_text": "This is from postData.json",
+        "user_id": 3,
+        "date_created": "05/27/2023 12:00:00"
+    }
+]

@@ -18,7 +18,7 @@ class User extends Model {
       },
       username: {
         type: DataTypes.STRING,
-        primaryKey: true,
+        // primaryKey: true,
         allowNull: false,
       },
   

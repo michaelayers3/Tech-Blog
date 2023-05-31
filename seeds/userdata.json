@@ -8,5 +8,10 @@
         "id": 2,
         "username": "Mobile",
         "password": "1234567"
+    },
+    {
+        "id": 3,
+        "username": "Tablet",
+        "password": "12345678"
     }
 ]
